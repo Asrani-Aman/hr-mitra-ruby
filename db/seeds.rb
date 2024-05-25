@@ -20,8 +20,8 @@ employee = Employee.create(
 )
 
 employee = Employee.new(
-    first_name: 'Radhe',
-    last_name: 'Krishna',
+    first_name: 'Siya',
+    last_name: 'Ram',
     personal_email: 'amanasrani@gmail.com',
     city: 'Alwar',
     state: 'Rajasthan',
