@@ -1,0 +1,16 @@
+<div class="col-lg-12">
+  <%= flash[:notice]%>
+  <div class="card rounded-0 mt-5 mb-5">
+    <div class="card-body">
+      <h2 class="text-center">Edit Employee</h2>
+    </div>
+  </div>
+  <!--<%# if @employee.errors.any? %>
+  <div class="col-lg-12">
+    <p class="lead">Please fix errors below:</p>
+    <%# @employee.errors.full_messages.each do |message| %>
+      <p class="text-danger"><%#= message %></p>
+    <%# end %>
+  </div>
+<%# end %>-->
+ <%= render 'form', employee: @employee %>

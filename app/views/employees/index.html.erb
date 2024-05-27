@@ -12,6 +12,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,9 @@
                     <td><%= employee.name %></td>
                     <td><%= employee.personal_email %></td>
                     <td><%= employee.full_address %></td>
+                    <td>
+                        <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-primary" %>
+                        <%= link_to "Delete", employee_path(employee), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
                 </tr>
             <% end %>
         </tbody>

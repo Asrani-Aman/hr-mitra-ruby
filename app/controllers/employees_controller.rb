@@ -19,7 +19,13 @@ class EmployeesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  def edit
+    @employee = Employee.find(params[:id])
+  end
+
+  end
 end
+
 
 private
 # This method defines strong parameters, which allow only specific attributes to be passed in the params hash.
