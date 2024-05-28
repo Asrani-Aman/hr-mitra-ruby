@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-
+  before_action :set_employee, only: [:show, :edit, :update, :destroy]
   def index
     @employees = Employee.all
   end
@@ -20,10 +20,8 @@ class EmployeesController < ApplicationController
     end
   end
   def edit
-    @employee = Employee.find(params[:id])
   end
   def update
-    @employee = Employee.find(params[:id])
     if @employee.update(allowed_employee_params)
       redirect_to employees_path, notice: "Employee was successfully updated."
     else
@@ -31,18 +29,22 @@ class EmployeesController < ApplicationController
     end
   end
   def destroy
-    @employee = Employee.find(params[:id])
     @employee.destroy
     redirect_to employees_path, notice: "Employee was successfully deleted."
   end
   def show
-    @employee = Employee.find(params[:id])
+
   end
 
 end
 
 
 private
+def set_employee
+  @employee = Employee.find(params[:id])
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to employees_path, notice: e
+end
 # This method defines strong parameters, which allow only specific attributes to be passed in the params hash.
 # It ensures that only the permitted attributes can be used for mass assignment.
 def allowed_employee_params
