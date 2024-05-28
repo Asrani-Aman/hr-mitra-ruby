@@ -12,6 +12,7 @@
   Rails.application.routes.draw do
     root 'home#index'
   resources :employees
+  resources :documents
   # delete "/employees/:id", to: "employees#destroy", as: :delete_employee
   # get 'pages/about-us'
   # get 'pages/contact-us'

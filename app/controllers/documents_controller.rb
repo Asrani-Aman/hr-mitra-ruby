@@ -26,7 +26,12 @@ class DocumentsController < ApplicationController
     def destroy
         @document.destroy
         redirect_to documents_path, notice: "Document was successfully deleted."
+    
     end
+    def show
+
+    end
+
 end
 
 private
