@@ -35,6 +35,9 @@ class EmployeesController < ApplicationController
     @employee.destroy
     redirect_to employees_path, notice: "Employee was successfully deleted."
   end
+  def show
+    @employee = Employee.find(params[:id])
+  end
 
 end
 
