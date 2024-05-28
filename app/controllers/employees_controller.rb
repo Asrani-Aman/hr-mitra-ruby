@@ -22,8 +22,15 @@ class EmployeesController < ApplicationController
   def edit
     @employee = Employee.find(params[:id])
   end
-
+  def update
+    @employee = Employee.find(params[:id])
+    if @employee.update(allowed_employee_params)
+      redirect_to employees_path, notice: "Employee was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
+
 end
 
 
