@@ -30,6 +30,11 @@ class EmployeesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+  def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+    redirect_to employees_path, notice: "Employee was successfully deleted."
+  end
 
 end
 
