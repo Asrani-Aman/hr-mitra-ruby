@@ -12,4 +12,7 @@ class Employee < ApplicationRecord
   def full_address
     "#{address_line_1}, #{city}, #{state}, #{country}, #{pincode}"
   end
+  def name_with_email
+    "#{name} (#{personal_email})"
+  end
 end
