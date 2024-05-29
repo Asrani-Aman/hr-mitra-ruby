@@ -42,5 +42,5 @@ def set_document
 end
 # This method defines strong parameters, which allow only specific attributes to be passed in the params hash.
 def allowed_document_params
-    params.require(:document).permit(:name, :doc_type, :employee_id)
+    params.require(:document).permit(:name, :doc_type, :employee_id, :file)
 end

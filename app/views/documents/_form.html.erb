@@ -28,6 +28,17 @@
       </div>
     </div>
   </div>
+   <div class="row">
+    <div class="col-lg-12 mt-4">
+      <div class="form-group">
+        <%= form.label :file, class: 'mb-2' %>
+        <%= form.file_field :file, class: 'form-control form-control-lg rounded-0' %>
+        <% document.errors.full_messages_for(:attachment).each do |message| %>
+          <p class="text-danger"><%= message %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-lg-12 mt-4">
       <%= form.submit class: 'btn btn-primary btn-lg rounded-0' %>
