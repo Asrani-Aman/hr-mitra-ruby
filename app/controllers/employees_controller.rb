@@ -14,8 +14,8 @@ class EmployeesController < ApplicationController
       redirect_to employees_path, notice: "Employee was successfully created."
       flash[:notice] = "Employee was successfully created yeahhhhhhhh!!!!!!!!!!!!!!!."
     else
-      flash[:notice] = "Employee was not successfully created."
-      render :new, status: :unprocessable_entity, notice: "Employee was not successfully created."
+      flash.now[:error] = "Employee creation failed: #{@employee.errors.full_messages.join(", ")}"
+      render :new, status: :unprocessable_entity
     end
   end
   def edit
