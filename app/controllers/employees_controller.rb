@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
       flash[:notice] = "Employee was successfully created yeahhhhhhhh!!!!!!!!!!!!!!!."
     else
       flash[:notice] = "Employee was not successfully created."
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: "Employee was not successfully created."
     end
   end
   def edit
