@@ -1,7 +1,7 @@
  <%= form_with model: employee do |form| %>
   <!-- Add form fields here -->
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-6">
       <div class="form-group">
         <%= form.label :first_name, class: 'mb-2' %>
         <%= form.text_field :first_name, class: 'form-control form-control-lg rounded-0' %>
@@ -10,9 +10,7 @@
         <% end %>
       </div>
     </div>
- 
-    </div>
-    <div class="col-lg-4">
+    <div class="col-lg-6">
       <div class="form-group">
         <%= form.label :last_name, class: 'mb-2' %>
         <%= form.text_field :last_name, class: 'form-control form-control-lg rounded-0' %>
@@ -42,7 +40,7 @@
       </div>
     </div>
   </div>
-    <div class="row">
+  <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
         <%= form.label :date_of_birth, class: 'mb-2' %>
@@ -63,7 +61,7 @@
     </div>
   </div>
   <div class="row>
-   <div class="col-lg-12">
+    <div class="col-lg-12">
       <div class="form-group">
         <%= form.label :about, class: 'mb-2' %>
         <%= form.text_area :about, class: 'form-control form-control-lg rounded-0' %>
@@ -83,7 +81,15 @@
         <% end %>
       </div>
     </div>
-
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :address_line_2, class: 'mb-2' %>
+        <%= form.text_field :address_line_2, class: 'form-control form-control-lg rounded-0' %>
+        <% employee.errors.full_messages_for(:address_line_2).each do |message| %>
+          <p class="text-danger"><%= message %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="row">
     <div class="col-lg-3">

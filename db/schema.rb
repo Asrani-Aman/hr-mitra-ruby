@@ -58,12 +58,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_073540) do
     t.string "pincode"
     t.string "address_line_1"
     t.string "address_line_2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.date "date_of_birth"
     t.string "job_title"
     t.date "date_of_joining"
     t.text "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
