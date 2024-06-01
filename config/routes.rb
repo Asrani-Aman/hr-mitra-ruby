@@ -10,7 +10,10 @@
   # Hare Krishna Hare Krishna Krishna Krishna Hare Hare Hare Rama Hare Rama Rama Rama Hare Hare
   
   Rails.application.routes.draw do
-    devise_for :users
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    }
     root 'home#index'
   resources :employees
   resources :documents
