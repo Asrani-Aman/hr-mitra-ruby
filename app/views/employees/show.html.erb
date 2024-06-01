@@ -13,14 +13,14 @@
           <div class="col-lg-6">
             <h3 class="text-center">Personal Information</h3>
             <p class="lead"><strong>First Name:</strong> <%= @employee.first_name %></p>
-            <p class="lead"><strong>Middle Name:</strong> <%= @employee.middle_name.present? ? @employee.middle_name : "N/A" %></p>
+
             <p class="lead"><strong>Last Name:</strong> <%= @employee.last_name %></p>
             <p class="lead"><strong>Personal Email:</strong> <%= @employee.personal_email %></p>
           </div>
           <div class="col-lg-6">
             <h3 class="text-center">Address Information</h3>
             <p class="lead"><strong>Address Line 1:</strong> <%= @employee.address_line_1 %></p>
-            <p class="lead"><strong>Address Line 2:</strong> <%= @employee.address_line_2 %></p>
+    
             <p class="lead"><strong>city:</strong> <%= @employee.city %></p>
             <p class="lead"><strong>state:</strong> <%= @employee.state %></p>
             <p class="lead"><strong>country:</strong> <%= @employee.country %></p>
